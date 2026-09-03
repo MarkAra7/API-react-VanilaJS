@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API ar Progress Bar</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      section { margin-bottom: 30px; padding: 15px; border: 1px solid #ccc; }
+      
+      /* Progress bar stils - zaļš */
+      #progressBar {
+        display: none;
+        width: 100%;
+        height: 20px;
+        margin-bottom: 15px;
+        accent-color: #2ecc71;
+      }
+      .button-group { margin: 10px 0; }
+    </style>
+  </head>
+  <body>
+
+    <h1>API Datu Ielāde</h1>
+    
+    <!-- Progress bar (sākumā paslēpts) -->
+    <progress id="progressBar"></progress>
+
+    <!-- 1. KAĶA ATTĒLS -->
+    <section>
+        <h2>1. Kaķa Attēls (3 metodes)</h2>
+        <div class="button-group">
+            <button onclick="catImgXHR()">XHR</button>
+            <button onclick="catImgPromise()">Promise</button>
+            <button onclick="catImgAsync()">Async/Await</button>
+        </div>
+        <br>
+        <img id="catImageDisplay" alt="Kaķis" style="max-width: 300px; display: block;" />
+    </section>
+
+    <!-- 2. SUŅU FAKTI -->
+    <section>
+        <h2>2. Suņu Fakti (3 metodes)</h2>
+        <label for="limitInput">Limits: </label>
+        <input type="number" id="limitInput" value="2" min="1" max="5">
+        <div class="button-group">
+            <button onclick="dogFactsXHR()">XHR</button>
+            <button onclick="dogFactsPromise()">Promise</button>
+            <button onclick="dogFactsAsync()">Async/Await</button>
+        </div>
+        <ul id="dogFactsList"></ul>
+    </section>
+
+    <!-- 3. KAĶA FAKTS -->
+    <section>
+        <h2>3. Kaķa Fakts (3 metodes)</h2>
+        <div class="button-group">
+            <button onclick="catFactXHR()">XHR</button>
+            <button onclick="catFactPromise()">Promise</button>
+            <button onclick="catFactAsync()">Async/Await</button>
+        </div>
+        <p id="catFactDisplay" style="font-weight: bold;"></p>
+    </section>
+
+    <script src="api.js"></script>
+  </body>
+</html>
